@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #efefef;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex-item {
+    width: 34rem;
+    margin: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 1.5rem 0 2rem;
+}
+
+.name, .title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: navy;
+    text-align: center;
+    margin: 0;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    justify-content: center;
+}
+
+.grid-item-left a, .grid-item-right a {
+    display: block;
+    text-decoration: none;
+    color: navy;
+    font-weight: bold;
+    padding-top: 4rem;
+}
+
+.grid-item-center img {
+    border: 1px solid;
+    height: 100%;
+    width: 70%;
+    border-radius: 50%;
+}
+
+article {
+    border: 2px solid;
+    height: 30rem;
+    overflow: scroll;
+    margin: 0 2rem 2% 3rem;
+    padding: 5%;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+/* Add media queries here, similar to the ones in your original styled-components */
+@media (max-width: 1440px) {
+    .grid-item-line-space {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    img {
+        height: 10rem;
+        width: 8rem;
+    }
+    .grid-item-left, .grid-item-right {
+        width: 5rem;
+    }
+    .grid-item-center {
+        width: 8rem;
+    }
+    /* Add more mobile styles as needed */
+}
