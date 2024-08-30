@@ -1,84 +1,233 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #efefef;
+    line-height: 1.6;
     margin: 0;
+    padding: 0;
+    background: #efefef;
+}
+
+/* Header Styles */
+header {
+    margin-top: 1.5%;
+    margin-bottom: 0.8%;
+}
+
+.header-content {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1.45rem 1.0875rem;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+}
+
+header h1 a {
+    color: navy;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 1%;
     padding: 0;
 }
 
+/* Flex Container */
 .flex-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .flex-item {
-    width: 34rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     margin: 1rem;
 }
 
+/* Grid Container */
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    margin: 0 1.5rem 0 2rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.grid-item {
+    font-family: arial;
+    text-align: center;
+    padding-bottom: 1.1rem;
+    justify-content: center;
 }
 
 .name, .title {
     font-size: 1rem;
+    font-family: arial;
     font-weight: bold;
     color: navy;
     text-align: center;
+    padding: 0;
     margin: 0;
-}
-
-.profile-grid {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
     justify-content: center;
 }
 
-.grid-item-left a, .grid-item-right a {
-    display: block;
-    text-decoration: none;
-    color: navy;
+/* Inner Grid */
+.inner-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.grid-item-left, .grid-item-right {
+    padding: 0;
+    margin: 0;
+}
+
+.grid-item-left p, .grid-item-right p {
+    font-size: 1rem;
+    font-family: arial;
     font-weight: bold;
+    color: navy;
+    display: flex;
+    align-items: center;
+}
+
+.grid-item-left a, .grid-item-right a {
+    text-decoration: none;
     padding-top: 4rem;
 }
 
-.grid-item-center img {
-    border: 1px solid;
-    height: 100%;
-    width: 70%;
-    border-radius: 50%;
+.grid-item-left a {
+    padding-right: 1.8rem;
 }
 
+.grid-item-right a {
+    padding-left: 1.8rem;
+}
+
+.grid-item-center {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item-center img {
+    width: 175px; 
+    height: 175px; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.grid-item a {
+    font-size: 1rem;
+    font-family: arial;
+    font-weight: bold;
+    color: navy;
+    text-align: center;
+    text-decoration: none;
+}
+
+.grid-item-line-space {
+    font-size: 1.5rem;
+    font-family: arial;
+    font-weight: bold;
+    color: navy;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+    display: flex;
+}
+
+/* Article */
 article {
-    border: 2px solid;
+    border-width: 2px;
+    border-style: solid;
     height: 30rem;
-    overflow: scroll;
-    margin: 0 2rem 2% 3rem;
+    overflow: auto;
+    margin: 0 auto 2%;
+    max-width: 600px;
+}
+
+article p {
     padding: 5%;
+    padding-bottom: 2%;
+    font-family: arial;
     font-size: 20px;
     line-height: 120%;
+    margin: 0;
 }
 
-/* Add media queries here, similar to the ones in your original styled-components */
-@media (max-width: 1440px) {
+/* Media Queries */
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .flex-item {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .grid-item-center img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    article {
+        height: 25rem;
+    }
+
+    .grid-item-left a, .grid-item-right a {
+        padding-top: 1rem;
+    }
+
+    .grid-item-left a {
+        padding-right: 1rem;
+    }
+
+    .grid-item-right a {
+        padding-left: 1rem;
+    }
+
     .grid-item-line-space {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 }
 
-@media (max-width: 425px) {
-    img {
-        height: 10rem;
-        width: 8rem;
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .flex-item {
+        max-width: 450px;
     }
-    .grid-item-left, .grid-item-right {
-        width: 5rem;
+    
+    .grid-item-center img {
+        width: 200px;
+        height: 200px;
     }
-    .grid-item-center {
-        width: 8rem;
+}
+
+/* Desktops and larger screens */
+@media only screen and (min-width: 1024px) {
+    .flex-container {
+        justify-content: space-around;
     }
-    /* Add more mobile styles as needed */
+}
+
+/* Image Container (from image.module.css) */
+.container {
+    /* Add any specific styles for the image container here */
 }
